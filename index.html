@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Essais de Frein</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+  <section id="screen-home" class="screen active">
+    <h1>Essais de Frein</h1>
+    <div class="menu-grid">
+      <button id="btn-start-test" class="btn-main">ESSAI DE FREIN</button>
+      <button id="btn-go-history" class="btn-secondary">HISTORIQUE</button>
+    </div>
+  </section>
+
+  <section id="screen-history" class="screen">
+    <h2>Historique des Essais</h2>
+    <div class="table-container">
+      <table id="table-history">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>H1 (Début)</th>
+            <th>H2 (Élim.)</th>
+            <th>H3 (Étanch.)</th>
+            <th>H4 (Vérif.)</th>
+            <th>H5 (Fin)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="nav-actions">
+      <button id="btn-export-doc" class="btn-main">EXPORTER EN .DOC</button>
+      <button class="btn-back-home btn-secondary">RETOUR</button>
+    </div>
+  </section>
+
+  <section id="screen-p1" class="screen theme-yellow-black">
+    <div class="nav-universal">
+      <button class="btn-universal-back">RETOUR</button>
+      <button class="btn-universal-skip">SAUTER</button>
+    </div>
+    <h2>Alimentation Surcharge</h2>
+    
+    <div class="timer-container">
+      <div class="timer-display" id="p1-timer-display">06:00</div>
+      <div class="timer-controls">
+        <button id="p1-time-plus" class="btn-control">+1 Min</button>
+        <button id="p1-time-minus" class="btn-control">-1 Min</button>
+      </div>
+      <div class="action-row">
+        <button id="btn-p1-timer" class="btn-action">Alimentation Surcharge</button>
+        <button id="btn-p1-reset" class="btn-reset">RÉINITIALISER</button>
+      </div>
+    </div>
+
+    <button id="btn-to-p2" class="btn-next">Élimination</button>
+  </section>
+
+  <section id="screen-p2" class="screen theme-black-yellow">
+    <div class="nav-universal">
+      <button class="btn-universal-back">RETOUR</button>
+      <button class="btn-universal-skip">SAUTER</button>
+    </div>
+    <h2>Élimination Surcharge : 5 bar</h2>
+    
+    <div class="timer-container">
+      <div class="timer-display" id="p2-timer-display">06:00</div>
+      <div class="timer-controls">
+        <button id="p2-time-plus" class="btn-control">+1 Min</button>
+        <button id="p2-time-minus" class="btn-control">-1 Min</button>
+      </div>
+      <div class="action-row">
+        <button id="btn-p2-timer" class="btn-action">Démarrer Timer</button>
+        <button id="btn-p2-reset" class="btn-reset">RÉINITIALISER</button>
+      </div>
+    </div>
+
+    <button id="btn-to-p3" class="btn-next">Étanchéité CG</button>
+  </section>
+
+  <section id="screen-p3" class="screen">
+    <div class="nav-universal">
+      <button class="btn-universal-back">RETOUR</button>
+      <button class="btn-universal-skip">SAUTER</button>
+    </div>
+    <h2>Étanchéité CG</h2>
+    
+    <ul class="instruction-list">
+      <li>Vérifier la pression de la conduite générale (CG) : 5 bar</li>
+      <li>Activer la fonction neutre</li>
+      <li>Observer la stabilité de la pression pendant 1 minute</li>
+      <li>La chute de pression doit être inférieure à 0,3 bar/min</li>
+      <li>Désactiver la fonction neutre</li>
+      <li>Serrer a 1 bar</li>
+      <li>Réactiver le neutre</li>
+      <li>Annoncer le serrage et attendre.</li>
+    </ul>
+
+    <div class="timer-container">
+      <div class="timer-display" id="p3-timer-display">01:00</div>
+      <div class="action-row">
+        <button id="btn-p3-timer" class="btn-action">LANCER CHRONO 1 MIN</button>
+        <button id="btn-p3-reset" class="btn-reset">RÉINITIALISER</button>
+      </div>
+    </div>
+
+    <button id="btn-to-p4" class="btn-next">Vérification des freins</button>
+  </section>
+
+  <section id="screen-p4" class="screen">
+    <div class="nav-universal">
+      <button class="btn-universal-back">RETOUR</button>
+      <button class="btn-universal-skip">SAUTER</button>
+    </div>
+    <h2>Vérification des freins</h2>
+    
+    <ul class="instruction-list">
+      <li>Attendre et vérifier la vidange de la CG : franche et continue</li>
+      <li>Alimenter la CG à 5 bar</li>
+      <li>Recevoir l'ordre de la conclusion de l'essai de frein</li>
+      <li>Attendre la stabilisation des RP</li>
+    </ul>
+
+    <button id="btn-finish-test" class="btn-main-success">Essai de frein terminé concluant</button>
+  </section>
+
+  <section id="screen-p5" class="screen theme-success-fullscreen">
+    <div class="fullscreen-message">
+      <h1>TERMINÉ</h1>
+      <button class="btn-back-home btn-outline">Retour à l'accueil</button>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
